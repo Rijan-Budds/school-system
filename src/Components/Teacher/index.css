@@ -1,0 +1,87 @@
+.teacher-dashboard {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 0 20px;
+  font-family: Arial, sans-serif;
+  color: #222;
+}
+
+.teacher-dashboard h2 {
+  margin-bottom: 10px;
+  color: #004085;
+}
+
+.teacher-dashboard p {
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.dashboard-section {
+  margin-bottom: 40px;
+}
+
+.submitted-homework-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.submitted-homework-table th,
+.submitted-homework-table td {
+  padding: 12px 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.submitted-homework-table th {
+  background-color: #f0f4ff;
+  color: #003366;
+}
+
+.submitted-homework-table td a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.submitted-homework-table td a:hover {
+  text-decoration: underline;
+}
+
+.submitted-homework-table td.pending {
+  color: #d97706; /* orange for pending */
+  font-weight: 600;
+}
+
+.submitted-homework-table td.graded {
+  color: #16a34a; /* green for graded */
+  font-weight: 600;
+}
+
+.mark-button {
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.mark-button:hover {
+  background-color: #084bcc;
+}
+
+.create-results-button {
+  background-color: #198754;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.create-results-button:hover {
+  background-color: #146c43;
+}
