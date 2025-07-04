@@ -34,7 +34,7 @@
             const user = results[0];
 
             if (user.password === password){
-                res.json({ message: "Login successful", userId: user.id, username: user.username});
+                res.json({ message: "Login successful", userId: user.id, username: user.username, role: user.role});
             }else{
                 res.status(401).json({message: "Incorrect password"});
             }
