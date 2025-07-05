@@ -1,4 +1,5 @@
-import { useState } from "react";
+/* eslint-disable no-unused-vars */
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
@@ -6,9 +7,21 @@ export default function Login() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // eslint-disable-next-line no-unused-vars
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    const role = localStorage.getItem("role");
+
+    if (isLoggedIn && role) {
+      if (role === "student") {
+        navigate("/student");
+      } else if (role === "teacher") {
+        navigate("/teacher");
+      }
+    }
+  }, [navigate]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,6 +41,9 @@ export default function Login() {
         console.log("Login successful", result);
         const role = result.role;
 
+        localStorage.setItem("isLoggedIn", "true");
+        localStorage.setItem("role", role);
+
         if (role === "student") {
           navigate("/student");
         } else if (role === "teacher") {
@@ -39,9 +55,10 @@ export default function Login() {
       }
     } catch (error) {
       console.error("Error connecting to the server", error);
+      alert("Server error. Try again later.");
     }
   };
-
+  
   return (
     <div className="login-container">
       <h2>Login</h2>
