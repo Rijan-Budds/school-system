@@ -4,6 +4,7 @@ import Home from "./Pages/Home/Home";
 import Teacher from "./Components/Teacher/TeacherDashboard";
 import Student from "./Components/Student/StudentDashboard";
 import ProtectedRoute from "./ProtectedRoute";
+import Register from "./Pages/Register/Register"
 
 export default function App() {
   return (
@@ -29,6 +30,8 @@ export default function App() {
             </ProtectedRoute>
           }
         />
+
+        <Route path="/register" element={<Register />}></Route>
       </Routes>
     </BrowserRouter>
   );
